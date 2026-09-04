@@ -1,0 +1,228 @@
+# PCB Acceptance Standards Overview: IPC / GJB / GB/T Three-System Comparison
+
+> A practical reference for hardware engineers, quality engineers, and procurement teams to understand PCB acceptance standards across **IPC**, **GJB**, and **GB/T** systems.
+
+---
+
+## 📌 Introduction
+
+PCB acceptance standards are the common "yardstick" for hardware design, manufacturing, and quality control. However, the standard landscape can be confusing because different systems are used in different industries and regions:
+
+- **IPC**: Global industry baseline for PCB workmanship and performance.
+- **GJB**: China military standard for high-reliability defense and aerospace applications.
+- **GB/T**: Chinese recommended national standards for civilian PCB manufacturing.
+
+This repository provides a structured comparison of these three systems, including classification levels, key technical metrics, and practical acceptance workflows.
+
+---
+
+## 🔹 IPC International Standard System
+
+IPC standards are widely used in global electronics manufacturing, especially in North America, Europe, and the Asia-Pacific region. They are divided into two main categories:
+
+| Standard Type | Core Documents | Purpose |
+|---|---|---|
+| Workmanship Acceptance | IPC-A-600 | Visual inspection and cosmetic acceptance |
+| Performance Specification | IPC-6010 series | Electrical, mechanical, and reliability requirements |
+| Rigid PCB | IPC-6012 | Most commonly used for rigid PCBs |
+| Flexible PCB | IPC-6013 | Flexible and rigid-flex PCBs |
+| HDI PCB | IPC-6016 | High-density interconnect boards |
+| High-Frequency PCB | IPC-6018 | Microwave and high-frequency boards |
+| Test Methods | IPC-TM-650 | Standard test procedures |
+
+### IPC Classification
+
+| Class | Application | Reliability Requirement | Defect Tolerance |
+|---|---|---|---|
+| Class 1 | Consumer electronics, toys, appliances | Basic functionality | Cosmetic defects allowed |
+| Class 2 | Industrial control, telecom, commercial automotive | Sustained performance | Minor defects allowed if not functional |
+| Class 3 | Aerospace, medical devices, critical automotive hardware | High reliability, continuous operation | Near-zero defect tolerance |
+
+> **Note:**  
+> IPC-6012DS 3A, sometimes referred to as "Class 4", is an even higher level for space-grade avionics and military applications. It requires near-perfect manufacturing and is typically associated with higher cost.
+
+### Key IPC Metrics
+
+| Metric | Class 1 | Class 2 | Class 3 |
+|---|---|---|---|
+| Barrel Copper Thickness | No specific requirement | ≥ 20 μm average, ≥ 16 μm single point | ≥ 25 μm average, ≥ 20 μm single point |
+| Outer Layer Copper | No requirement | ≥ 30 μm | ≥ 30 μm, strictly controlled |
+| Annular Ring Width | No requirement | ≥ 50 μm | ≥ 50 μm, no breakout |
+| Insulation Resistance | ≥ 100 MΩ | ≥ 500 MΩ | ≥ 1000 MΩ |
+| Thermal Stress Test | 288°C / 10 s × 1 cycle | 288°C / 10 s × 3 cycles | 288°C / 10 s ≥ 3 cycles |
+| Inspection Method | AQL sampling | AQL sampling, critical dimension inspection | 100% electrical test + full critical dimension inspection |
+
+---
+
+## 🔹 GJB China National Military Standard System
+
+GJB is the Chinese military standard system, primarily applied to defense, aerospace, and high-reliability electronic products. In the PCB field, GJB standards set stricter requirements for environmental resistance, traceability, and long-term reliability.
+
+### Core GJB Standards
+
+| Standard No. | Name | Application |
+|---|---|---|
+| GJB 362B-2009 | General Specification for Rigid Printed Boards | Main military PCB specification |
+| GJB 5432-2005 | High-Reliability Soldering Requirements | Military assembly soldering processes |
+| GJB 1032-2020 | Environmental Stress Screening | Temperature cycling and vibration shock |
+| GJB 548C-2021 | Test Methods for Microelectronic Devices | IC and component reliability testing |
+
+### GJB Grade Mapping
+
+| GJB Grade | Approximate IPC Equivalent | Typical Application | Service Life |
+|---|---|---|---|
+| Grade Ⅰ | IPC Class 1 | General-purpose products | 5–10 years |
+| Grade Ⅱ | IPC Class 2 | Industrial control, telecom equipment | Over 10 years |
+| Grade Ⅲ | IPC Class 3+ | Military, aerospace, life support | Over 15 years |
+
+> **Important:**  
+> GJB Grade Ⅲ is generally stricter than IPC Class 3, especially in terms of environmental adaptability, traceability, and documentation requirements.
+
+### Key GJB Requirements
+
+| Metric | Requirement |
+|---|---|
+| Substrate Tg | ≥ 170°C |
+| Barrel Copper Thickness | ≥ 25 μm |
+| Dielectric Withstanding Voltage | ≥ 1000 V/mm |
+| Ionic Contamination | ≤ 1.56 μg/cm² (NaCl equivalent) |
+| Solder Mask Solvent Resistance | Required |
+| Traceability | Full-process traceability |
+| Quality System | GJB 9001 certification |
+
+### Typical GJB Additional Tests
+
+- Salt spray testing
+- Solvent resistance testing
+- Damp-heat cycling
+- Vibration and shock testing
+- Thermal shock testing from -55°C to +125°C
+- Insulation resistance testing after damp heat
+- Electromigration testing
+
+---
+
+## 🔹 GB/T Chinese Recommended National Standards
+
+GB/T standards are the national recommended standards in China. They are often used for civilian PCB manufacturing and can reference IEC and IPC standards.
+
+Unlike IPC, GB/T does not use a universal Class 1/2/3 reliability grading system. Instead, PCB requirements are usually defined by board type:
+
+- Single-sided PCBs
+- Double-sided PCBs
+- Multilayer PCBs
+- Flexible PCBs
+
+### Core GB/T Standards
+
+| Standard No. | Description |
+|---|---|
+| GB/T 4588.1-1996 | Single/double-sided PCBs without PTH |
+| GB/T 4588.2-1996 | Single/double-sided PCBs with PTH |
+| GB/T 4588.3-2002 | PCB design and usage guide |
+| GB/T 4588.4-2017 | Multilayer PCB performance requirements |
+| GB/T 4677 series | PCB test methods |
+| GB/T 4721–4725 series | Copper-clad laminate standards |
+
+> **Update:**  
+> GB/T 4588.1-1996 and GB/T 4588.2-1996 were withdrawn in July 2026 and replaced by **GB/T 4588-2025**.
+
+### General Acceptance Level
+
+GB/T acceptance requirements are generally comparable to **IPC Class 1 to Class 2**. For high-reliability or military projects, IPC or GJB standards are usually more appropriate.
+
+---
+
+## 🔎 Cross-System Comparison
+
+| Dimension | IPC | GJB | GB/T |
+|---|---|---|---|
+| Standard Nature | Voluntary industry standard | Mandatory military standard | Recommended national standard |
+| Grading System | Class 1 / 2 / 3 | Grade Ⅰ / Ⅱ / Ⅲ | By board type |
+| Environmental Resistance | Commercial to industrial | Extreme temperature, shock, salt spray | Commercial to industrial |
+| Defect Tolerance | Graded tolerance | Near-zero defect | Minor defects acceptable |
+| Traceability | Basic | Full-process traceable | Basic |
+| Quality System | ISO 9001 | GJB 9001 | ISO 9001 |
+| Highest Barrel Copper | ≥ 25 μm | ≥ 25 μm | ≥ 18 μm (multilayer) |
+| Acceptance Method | Sampling or full inspection | First article + lot acceptance | Sampling inspection |
+| Typical Use Case | Global electronics | Military and aerospace | Domestic civilian PCB |
+
+---
+
+## 🎯 How to Select the Right Standard
+
+| Product Type | Recommended Standard |
+|---|---|
+| Consumer electronics, toys, small appliances | IPC Class 1 |
+| Industrial control, telecom, commercial equipment | IPC Class 2 |
+| Medical devices, critical automotive electronics | IPC Class 3 |
+| Military equipment, aerospace, life support systems | GJB 362B Grade Ⅲ |
+| General domestic civilian projects | GB/T 4588 series |
+| Space-grade avionics and high-end military systems | GJB Grade Ⅲ + supplements |
+
+---
+
+## 📋 PCB Acceptance Workflow
+
+1. **Define the Reliability Class**  
+   Select IPC, GJB, or GB/T based on the product’s application, risk level, and reliability requirements.
+
+2. **Review Design Files**  
+   Check Gerber files, drill files, stack-up, and material specifications against the selected standard.
+
+3. **Visual Inspection**  
+   Perform workmanship inspection according to IPC-A-600 or the corresponding GJB clauses.
+
+4. **Dimensional Verification**  
+   Inspect line width, spacing, annular ring, hole diameter, and layer-to-layer registration.
+
+5. **Electrical Testing**  
+   Perform continuity testing, insulation resistance testing, and dielectric withstand voltage testing.
+
+6. **Reliability Testing**  
+   Conduct thermal stress, solderability, thermal cycling, vibration, or other tests according to the required grade.
+
+7. **Issue Acceptance Report**  
+   Clearly record the standard number, revision, class, grade, and test results in the final report.
+
+---
+
+## 🚩 Common Rejection Criteria for IPC Class 2
+
+| Defect Type | Acceptable Condition | Rejection Condition |
+|---|---|---|
+| Pad / Hole Misalignment | Annular ring ≥ 50 μm | Annular ring breakout or connection failure |
+| Solder Mask Dam | Solder mask dam ≥ 50 μm | No isolation between pads |
+| Copper Foil Scratch | No substrate exposure, depth < 30% of copper thickness | Substrate exposed or electrical performance affected |
+| Measling / Micro-Cracking | ≤ 50 μm, not crossing conductors | Cracks crossing multiple conductors or > 50 μm |
+| Void in Hole | Void ≤ 5% of barrel area, not through-wall | Affects continuity or mechanical strength |
+
+---
+
+## 📝 References
+
+- IPC-A-600M, *Acceptability of Printed Boards*
+- IPC-6012F, *Qualification and Performance Specification for Rigid PCBs*
+- IPC-TM-650, *Test Methods Manual*
+- GJB 362B-2009, *General Specification for Rigid Printed Boards*
+- GJB 5432-2005, *High-Reliability Soldering Requirements for PCB Assemblies*
+- GB/T 4588 series, *Printed Board Specifications*
+- GB/T 4677 series, *Test Methods for Printed Boards*
+
+---
+
+## ⚠️ Disclaimer
+
+This document provides a general technical reference. The official standard revision specified in the procurement contract, drawing, or technical specification shall take precedence. Manufacturing conditions, material selection, and end-use environment may require additional verification.
+
+---
+
+## License
+
+This content is released under the [MIT License](LICENSE).
+
+---
+
+## Tags
+
+`#PCB` `#HardwareEngineering` `#IPC` `#GJB` `#QualityAssurance` `#ElectronicsDesign` `#Manufacturing` `#EmbeddedSystems`
