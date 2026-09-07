@@ -1,0 +1,119 @@
+Applicable Role: Hardware Engineers, PCB Quality Inspection, Procurement & Manufacturing Teams
+
+---
+📌 Overview
+PCB acceptance standards are the core "technical yardstick" for hardware design, factory inspection and mass production quality control in electronic projects.
+In domestic and overseas electronic manufacturing scenarios, three standard systems are widely used, with clear positioning differences:
+- IPC: Global universal industry baseline standard (international mainstream)
+- GB/T: Chinese national recommended standard (civilian domestic scenarios)
+- GJB: Chinese military high-reliability mandatory standard (defense, aerospace and high-end reliable equipment)
+This document systematically sorts out the grading rules, core technical indicators, scenario differences and cross-standard mapping relationships of the three systems, providing a direct reference for engineers to select standards and verify PCB acceptance.
+
+---
+🌍 IPC International Standard System
+IPC is the dominant international standard for electronic assembly and PCB manufacturing, adopted globally by North America, Europe and APAC electronics industries. It covers full-process workmanship, performance and reliability verification.
+Core Standard Series
+- IPC-A-600: PCB visual appearance workmanship acceptance specification
+- IPC-6010 Series: PCB performance and reliability qualification specifications
+IPC 3-Level Reliability Classification
+IPC adopts a mature hierarchical system based on product application scenarios and reliability requirements:
+- Class 1 | Consumer Grade
+Applicable to toys, daily appliances and ordinary consumer electronics. Focus on basic functional availability; minor cosmetic defects are allowable.
+- Class 2 | Industrial Grade
+Applicable to industrial control, communication equipment, commercial vehicle electronics. Require stable long-term operation; allowable extremely limited downtime.
+- Class 3 | High-Reliability Grade
+Applicable to aerospace, medical equipment, key automotive electronic hardware. Require zero interruption under harsh working conditions, full inspection coverage.
+Supplement: IPC-6012DS 3A (unofficial Class 4) is for space-grade avionics, with ultra-strict process and performance requirements and high manufacturing costs.
+Key IPC Technical Indicators
+- Barrel copper thickness: Class 2 average ≥20μm; Class 3 average ≥25μm
+- Thermal stress test: Class 2 completes 3 cycles @288℃/10s; Class 3 ≥3 cycles
+- Inspection requirement: Class 3 mandatory 100% electrical test + full inspection of key dimensions
+
+---
+🛡️ GJB Chinese Military Standard System
+GJB is the mandatory military standard for China’s defense and aerospace electronic equipment, oriented to high-reliability and extreme working condition scenarios. Its technical system is aligned with the US military standards MIL-PRF-31032 / MIL-PRF-55110.
+Core applicable specification: GJB 362B-2009 (Rigid Printed Circuit Board General Specification)
+GJB Grade & IPC Class Mapping
+- GJB Grade Ⅰ ≈ IPC Class 1: General equipment, service life 5-10 years
+- GJB Grade Ⅱ ≈ IPC Class 2: Industrial communication equipment, service life >10 years
+- GJB Grade Ⅲ ≫ IPC Class 3: Military and aerospace core equipment, service life >15 years
+Key Difference: GJB Grade 3 is far stricter than ordinary IPC Class 3 in environmental adaptability, batch consistency and full-process traceability.
+Unique Mandatory Military Test Items
+In addition to conventional electrical and dimensional inspection, GJB mandatory adds extreme environment and reliability verification:
+- Salt spray corrosion test, solvent resistance test
+- High and low temperature damp-heat cycle test
+- Vibration shock test, thermal shock test (-55℃ ~ +125℃)
+- Electromigration reliability test
+Meanwhile, full-process production traceability and GJB 9001 military quality system certification are mandatory for manufacturers.
+
+---
+🇨🇳 GB/T Chinese Recommended National Standard
+The GB/T series is a domestic recommended national standard for civilian PCB manufacturing, referenced from IEC and IPC international standards, suitable for ordinary domestic civilian electronic projects.
+Core Features
+- No unified reliability grading system like IPC/GJB; classified by board type (single-sided, double-sided, multilayer)
+- Overall acceptance level is equivalent to IPC Class 1~2, insufficient for high-reliability and military scenarios
+- High-end domestic projects generally adopt IPC or GJB standards directly
+Important Update: GB/T 4588.1/.2-1996 was officially withdrawn in July 2026, replaced by the new version GB/T 4588-2025
+
+---
+📊 Three Standard Systems Cross Comparison
+Comparison Dimension
+IPC
+GJB (Military Standard)
+GB/T (National Recommended Standard)
+Standard Attribute
+Voluntary Industry Standard
+Mandatory Military Standard
+Recommended National Standard
+Grading Mechanism
+Class 1 / 2 / 3
+Grade Ⅰ / Ⅱ / Ⅲ
+No reliability grading
+Applicable Environment
+Commercial / Industrial Conventional Environment
+Extreme temperature, shock, salt fog, harsh environment
+Commercial & Ordinary Industrial Environment
+Traceability Requirement
+Basic Batch Traceability
+Full-process whole-chain traceability
+Basic Batch Traceability
+Max Barrel Copper Thickness
+≥25μm (Class 3)
+≥25μm (Grade Ⅲ)
+≥18μm (Multilayer Board)
+Inspection Mode
+Sampling / Full inspection by grade
+First article inspection + full batch verification
+Conventional sampling inspection
+
+---
+🎯 Standard Selection Guide (Scenario-Based)
+Quick matching of acceptance standards based on project attributes:
+- Consumer Electronics → IPC Class 1
+- Industrial Control / Communication Equipment → IPC Class 2
+- Medical Equipment / Key Automotive Electronics → IPC Class 3
+- Military / Aerospace Equipment → GJB 362B Grade Ⅲ
+- Ordinary Domestic Civilian Projects → GB/T 4588 Series (2025 New Version)
+- Space-Grade Avionics → GJB Grade Ⅲ + Supplementary Verification (Equivalent to IPC 3A)
+
+---
+✅ Standard PCB Acceptance Workflow
+Unified executable inspection process for hardware and quality engineers:
+1. Determine product reliability grade and match corresponding acceptance standard
+2. Align Gerber files, drilling files and process parameters with selected standard specifications
+3. PCB visual appearance workmanship inspection
+4. Key dimension verification: line width, line spacing, annular ring, board thickness, registration accuracy
+5. 100% continuity test and dielectric withstand voltage test
+6. Complete environmental and reliability tests according to standard grade requirements
+7. Issue official acceptance report, mark the exact standard number and version
+
+---
+📌 Disclaimer
+This document is for engineering reference only. The actual acceptance standard shall be subject to the latest official standard version and the standard revision specified in the project procurement contract.
+📚 References
+- IPC Official Industry Standards (IPC-A-600, IPC-6010 Series)
+- GJB 362B-2009 Rigid Printed Circuit Board General Specification
+- GB/T 4588-2025 Printed Circuit Board Series Specifications
+- GB/T 4677 PCB Test Method Standard
+- Electronic Manufacturing Industry Engineering Technical Documents
+Tags: #HardwareEngineering #PCB #ElectronicsDesign #QualityAssurance #IPC #EmbeddedSystems #MilitaryElectronics #HardwareDesign
