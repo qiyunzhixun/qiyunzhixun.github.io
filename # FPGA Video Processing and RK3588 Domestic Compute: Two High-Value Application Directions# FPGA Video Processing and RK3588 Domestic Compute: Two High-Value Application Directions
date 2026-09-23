@@ -1,0 +1,74 @@
+# FPGA Video Processing and RK3588 Domestic Compute: Two High-Value Application Directions
+
+> Author: Xi'an Qiyun Zhixun Electronic Technology Co., Ltd.
+> Keywords: FPGA · Video stitching · SDI/HDMI · RK3588 · Domestic/localized compute · Edge computing
+
+In embedded hardware, two directions have stayed hot in recent years: **audio/video processing** — command & dispatch, broadcast, and conference systems will always need low-latency, high-throughput video solutions — and **domestic compute platforms**, where IT localization (Xinchuang) and supply-chain security have pushed RK3588 and other Chinese SoCs into the spotlight. Qiyun Zhixun has volume-deployed products in both directions. This article walks through how to choose platforms and what it takes to ship, based on real cases.
+
+## 1. FPGA Video Processing: Low Latency Is a Hard Requirement
+
+### Why video applications favor FPGA
+
+Video processing is a classic FPGA domain. Compared with general-purpose processors, FPGA's parallel architecture is a natural fit for pixel-level parallel processing of multiple video streams; compared with dedicated ASICs, FPGAs are reconfigurable and can adapt flexibly to different protocols and algorithm evolution. For scenarios like command & dispatch, **latency is a safety metric** — millisecond-level delays can affect decisions, and FPGA's deterministic processing advantage is irreplaceable.
+
+### Case 1: 4K/8K Multi-Screen Video Stitching Processor
+
+- **Architecture**: Xilinx FPGA
+- **Capability**: supports 16 video inputs with multi-screen stitching
+- **Key metric**: processing latency below 1 frame
+- **Deployed in**: command & dispatch centers and other venues requiring synchronized multi-source display on large screens
+
+The difficulty of multi-screen stitching lies in **synchronization** and **bandwidth**: 16 inputs must stay frame-synchronized, and the pixel throughput of 4K/8K resolutions demands sufficient DDR bandwidth and carefully designed pipelines. From FPGA selection and DDR routing to logic implementation, such designs require a team experienced in high-speed board design.
+
+### Case 2: Professional AV Conversion and Streaming Devices
+
+- SDI/HDMI format converters — mixed SDI/HDMI environments are the norm in broadcast; conversion must preserve color space and timing without loss
+- 4K live-streaming encoders — low-latency encoding and stable streaming for live broadcast
+- 32-channel digital audio processors — routing, EQ, and delay processing for multi-channel audio
+
+### Trend: From Format Conversion to Intelligent Stitching
+
+The evolution of FPGA video solutions is clear: early work did format conversion, mid-stage work did real-time multi-screen stitching, and now AI-assisted analysis is being layered on. The stack is moving from "pure logic" to "logic + algorithms", which demands teams with combined FPGA and algorithm expertise.
+
+## 2. RK3588 Domestic Compute: Full-Stack Capability from Chip to System
+
+### Why RK3588
+
+With an 8-core high-performance CPU, 8K video encode/decode, and rich peripheral interfaces, RK3588 has become a popular choice for domestic embedded compute — from industrial gateways and edge AI terminals to digital signage and smart cockpits. But turning a bare BGA chip into a mass-producible system sits behind a chain of engineering work: core board design, power, thermal, and wide-temperature validation.
+
+### Qiyun Zhixun's RK3588 Full-Stack Domestic Compute Platform
+
+Targeting industrial control, onboard display, rail transit, security AI, and domestic IT (Xinchuang) scenarios, Qiyun Zhixun offers a full series of RK3588 modular compute platforms:
+
+| Form Factor | Positioning |
+| --- | --- |
+| **SOM Core Board** | Highly integrated minimal system; customers can quickly develop on top |
+| **Industrial Carrier Board** | For industrial sites; rich interfaces and strong environmental adaptability |
+| **Edge Unit** | Turnkey complete unit covering full application scenarios |
+
+**9 products** across the three form factors, supporting 8K video decode, with operating temperature covering **-40~85°C** — the latter is a hard requirement for industrial and rail transit use.
+
+### Design Essentials from Chip to System
+
+1. **BGA placement and power design**: RK3588 has high power density; power tree design, decoupling, and thermal paths must be considered together;
+2. **High-speed interface integrity**: the impedance and routing quality of PCIe, USB, HDMI/DP and other high-speed signals determine stability;
+3. **Wide-temperature validation**: -40~85°C means component selection, soldering processes, and thermal design must all follow industrial-grade standards;
+4. **Software ecosystem**: BSP, drivers, and OS bring-up must ship together with the hardware so customers can use it out of the box.
+
+## 3. Platform Selection Guide: FPGA, RK3588, or Heterogeneous?
+
+| Scenario | Recommended Platform | Rationale |
+| --- | --- | --- |
+| Multi-stream parallel video, low latency, changing protocols | FPGA | Parallelism + deterministic latency |
+| General compute, AI inference, Linux ecosystem, localization | RK3588 | Compute + ecosystem + Xinchuang compliance |
+| Need both high-speed parallelism and general compute | Heterogeneous (e.g., Zynq SoC) | FPGA logic + ARM general compute complement each other |
+
+Qiyun Zhixun has shipped cases on all three — FPGA for video stitching and industrial vision (Zynq + GigE Vision + AI inference acceleration), ARM for the full RK3588 series. During platform selection, asking "how mass-producible is this solution?" is often more valuable than debating spec sheets.
+
+## Closing Thoughts
+
+Video and domestic compute — one rewards depth, the other rewards breadth, but both test **complete engineering capability from chip to system**. If you are evaluating projects in either direction, feel free to bring your requirements to us — or use the official toolkit to estimate PCB/SMT costs and get a preliminary quote in 30 seconds.
+
+- Website: www.qiyunzhixun.com
+
+> Compiled from public information on Qiyun Zhixun's official website; product parameters are subject to the latest official announcements.
